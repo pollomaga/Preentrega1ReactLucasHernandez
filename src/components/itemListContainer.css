@@ -1,0 +1,15 @@
+.item-list-container {
+    margin-top: 0px;
+    text-align: center;
+    width: 100vw; 
+    
+}
+
+.greeting {
+    font-size: 24px;
+    color: #dc1616;
+    font-weight: bold;
+    text-align: center;
+    width: 100vw; 
+    
+}
