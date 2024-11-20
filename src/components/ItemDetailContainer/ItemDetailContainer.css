@@ -1,0 +1,38 @@
+.item-detail-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  text-align: center;
+}
+
+.item-detail-image {
+  max-width: 300px;
+  margin-bottom: 20px;
+}
+
+.item-detail-info {
+  max-width: 500px;
+}
+
+.item-detail-nombre {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.item-detail-descripcion {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.item-detail-precio {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.item-detail-equipo {
+  font-size: 16px;
+  color: gray;
+}

@@ -1,0 +1,30 @@
+.navbar {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #665db2;
+  color: white;
+}
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 20px; 
+}
+
+.navbar-links a {
+  margin-right: 20px;
+  text-decoration: none;
+  color: white;
+}
+
+.navbar-cart {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.logo {
+  height: 70px; 
+  width: auto; 
+  vertical-align: middle; 
+}
