@@ -14,23 +14,22 @@ function Cart() {
   const handleInputChange = (e) => {
     setBuyer({ ...buyer, [e.target.name]: e.target.value });
   };
-
   const handleCheckout = (e) => {
     e.preventDefault();
-
+  
     if (!buyer.name || !buyer.email || !buyer.address) {
       alert("Por favor completa todos los campos.");
       return;
     }
-
+  
     const confirmCheckout = window.confirm("¿Estás seguro de generar tu orden de compra?");
     if (!confirmCheckout) return;
-
-    
+  
+  
     const generatedOrderId = `ORD-${Math.random().toString(36).substring(2, 9).toUpperCase()}`;
     setOrderId(generatedOrderId);
-
-    
+  
+   
     const order = {
       buyer,
       items: cart,
@@ -38,9 +37,11 @@ function Cart() {
       orderId: generatedOrderId,
       date: new Date().toISOString(),
     };
-
+  
     console.log("Orden creada:", order);
   };
+  
+
 
   const handleConfirmPurchase = () => {
     clearCart(); 
@@ -87,7 +88,7 @@ function Cart() {
         <p><strong>Total:</strong> ${totalPrice}</p>
 
         <h3>Datos del comprador</h3>
-        <form onSubmit={handleCheckout}>
+        <form className="checkout-form" onSubmit={handleCheckout}>
           <input
             type="text"
             name="name"

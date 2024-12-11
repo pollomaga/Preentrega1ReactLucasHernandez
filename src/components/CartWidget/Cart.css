@@ -9,14 +9,14 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
-/* Encabezado */
+
 .cart-container h1 {
   text-align: center;
   color: #ffc107;
   margin-bottom: 20px;
 }
 
-/* Lista de productos en el carrito */
+
 .cart-items {
   display: flex;
   flex-direction: column;
@@ -62,7 +62,7 @@
   background-color: #c82333;
 }
 
-/* Resumen del carrito */
+
 .cart-summary {
   border: 1px solid #444;
   border-radius: 8px;
@@ -79,48 +79,60 @@
   margin: 5px 0;
 }
 
-/* Total */
+
 .cart-total {
   font-size: 1.2rem;
   color: #28a745;
   margin-top: 15px;
 }
 
-/* Formulario del comprador */
 .checkout-form {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  align-items: center;
   gap: 10px;
   margin-top: 20px;
 }
 
 .checkout-form input {
   padding: 10px;
+  border: 1px solid #ccc;
   border-radius: 5px;
-  border: 1px solid #444;
-  background-color: #212529;
-  color: #fff;
+  font-size: 16px;
+  color: #333;
+  width: 100%;
+  max-width: 250px;
+  transition: all 0.3s ease;
 }
 
-.checkout-form input::placeholder {
-  color: #aaa;
+.checkout-form input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  outline: none;
 }
 
 .checkout-form button {
-  background-color: #28a745;
+  background-color: #000;
   color: #fff;
+  padding: 10px 20px;
+  font-size: 16px;
   border: none;
   border-radius: 5px;
-  padding: 10px 20px;
   cursor: pointer;
-  margin-top: 10px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .checkout-form button:hover {
-  background-color: #218838;
+  background-color: #333;
+  transform: scale(1.05);
 }
 
-/* Mensaje de confirmación */
+.checkout-form button:active {
+  transform: scale(0.95);
+}
+
+
+
 .order-confirmation {
   border: 2px solid #ffc107;
   background-color: #343a40;
