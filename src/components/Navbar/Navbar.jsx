@@ -1,6 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import CartWidget from "../CartWidget/CartWidget";
-import "./Navbar.css";
+import "./navbar.css";
 
 function Navbar() {
   const location = useLocation();
