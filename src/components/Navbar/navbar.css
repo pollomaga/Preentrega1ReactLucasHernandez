@@ -28,3 +28,8 @@
   width: auto; 
   vertical-align: middle; 
 }
+.navbar-links .active {
+  font-weight: bold;
+  color: #ff6347; /* Ejemplo de color destacado */
+  text-decoration: underline;
+}

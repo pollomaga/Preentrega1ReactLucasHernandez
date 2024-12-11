@@ -1,30 +1,46 @@
-import { useParams } from "react-router-dom";
-import camisetas from "../../data/camisetas";
-import "./ItemDetailContainer.css";
+import React, { useState, useContext } from "react";
+import { CartContext } from "../CartWidget/CartContext";
+import "./ItemDetail.css";
 
-function ItemDetailContainer() {
-  const { id } = useParams(); // Capturo el ID del producto
-  const producto = camisetas.find((item) => item.id === id); // Busco el producto por ID
+function ItemDetail({ producto }) {
+  const [cantidad, setCantidad] = useState(1);
+  const { addToCart } = useContext(CartContext);
 
-  if (!producto) {
-    return <h2 className="error">Producto no encontrado</h2>;
-  }
+  const handleIncrease = () => setCantidad(cantidad + 1);
+  const handleDecrease = () => {
+    if (cantidad > 1) {
+      setCantidad(cantidad - 1);
+    }
+  };
+
+  const handleAddToCart = () => {
+    addToCart(producto, cantidad);
+    console.log(`Producto agregado: ${producto.nombre}, Cantidad: ${cantidad}`);
+  };
 
   return (
-    <div className="item-detail-container">
+    <div className="item-detail">
       <img
         src={producto.imagen}
         alt={producto.nombre}
-        className="item-detail-image"
+        className="item-image"
       />
-      <div className="item-detail-info">
-        <h1 className="item-detail-nombre">{producto.nombre}</h1>
-        <p className="item-detail-descripcion">{producto.descripcion}</p>
-        <p className="item-detail-precio">Precio: ${producto.precio}</p>
-        <p className="item-detail-equipo">Equipo: {producto.equipo}</p>
+      <h1 className="item-title">{producto.nombre}</h1>
+      <p>Precio: ${producto.precio}</p>
+      <p>Equipo: {producto.equipo}</p>
+      <p>{producto.descripcion}</p>
+      <div className="quantity-selector">
+        <button onClick={handleDecrease}>-</button>
+        <span>{cantidad}</span>
+        <button onClick={handleIncrease}>+</button>
       </div>
+      <button onClick={handleAddToCart} className="add-to-cart-button">
+        Agregar al carrito
+      </button>
     </div>
   );
+  
+  
 }
 
-export default ItemDetailContainer;
+export default ItemDetail;

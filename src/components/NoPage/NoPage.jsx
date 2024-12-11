@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
-import "./NoPage.css"; // Archivo CSS para estilos
-
+import "./NoPage.css"; 
 function NoPage() {
   return (
     <div className="not-found-container">
