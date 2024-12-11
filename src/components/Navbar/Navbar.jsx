@@ -15,8 +15,7 @@ function Navbar() {
         <Link to="/" className={isActive("/") ? "active" : ""}>
           <img src="/logo.png" alt="Logo" className="logo" />
         </Link>
-        
-        <Link
+                <Link
           to="/category/espana"
           className={isActive("/category/espana") ? "active" : ""}
         >
